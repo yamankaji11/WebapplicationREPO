@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+/* search bar and header should be horizontal */
+header{
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+header h1{
+    margin: 0;
+}
+header form{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+header input[type="text"]{
+    width: 300px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+header button{
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #4CAF50;
+    cursor: pointer;
+    margin-left: 10px;
+}
+header button:hover{
+    background-color: #4CAF50;
+    color: #fff;
+    
+}
+/* nav bar should be vertical */
+nav{
+    width: 200px;
+    background-color: #333;
+    position: fixed;
+    height: 100%;
+    padding-top: 20px;
+}
+nav a{
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+nav a:hover{
+    background-color: #575757;
+}
+main{
+    margin-left: 220px; /* Space for the vertical nav bar */
+    padding: 20px;
+}
+footer{
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
