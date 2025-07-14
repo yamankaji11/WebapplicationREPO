@@ -1,75 +1,184 @@
-*{
-    margin: 0;
-    padding: 0;
+:root {
+    --clr-dark: #0f172a;
+    --clr-light: #f1f5f9;
+    --clr-accent: #e11d48;
+}
+
+* {
     box-sizing: border-box;
 }
-body{
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-}
-/* search bar and header should be horizontal */
-header{
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-header h1{
+
+body {
     margin: 0;
-}
-header form{
+    padding: 0;
+    line-height: 1.6;
+    font-family: "Roboto", sans-serif;
+    color: var(--clr-dark);
+    background-color: var(--clr-light);
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    align-items: center;
+    height: 100vh;
 }
-header input[type="text"]{
-    width: 300px;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-}
-header button{
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    background-color: #fff;
-    color: #4CAF50;
-    cursor: pointer;
-    margin-left: 10px;
-}
-header button:hover{
-    background-color: #4CAF50;
-    color: #fff;
-    
-}
-/* nav bar should be vertical */
-nav{
-    width: 200px;
-    background-color: #333;
-    position: fixed;
-    height: 100%;
-    padding-top: 20px;
-}
-nav a{
-    padding: 10px 15px;
-    text-decoration: none;
-    color: white;
-    display: block;
-}
-nav a:hover{
-    background-color: #575757;
-}
-main{
-    margin-left: 220px; /* Space for the vertical nav bar */
+
+.grid-container {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto; 
+    grid-template-columns: 1fr 3fr; 
+    gap: 10px;
+    width: 90%;
+    height: 95%;
+    border: 2px solid var(--clr-dark);
     padding: 20px;
 }
-footer{
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
+
+.item {
+    background-color: #fb7185;
     width: 100%;
-    bottom: 0;
+    height: 100%;
+    padding: 1em;
+    font-weight: 700;
+    color: var(--clr-light);
+    text-align: center;
+    border: 2px solid var(--clr-accent);
+    border-radius: 2px;
 }
+
+/* Navbar */
+.navbar {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+/* Header */
+.header {
+    grid-column: 1 / 3;
+    grid-row: 2;
+}
+
+/* Sidebar */
+.sidebar {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+/* Main Content */
+.main {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+/* Footer */
+.footer {
+    grid-column: 1 / 3;
+    grid-row: 4;
+}
+
+/* ======== Mobile Devices (Phones) ========
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-rows: auto auto auto auto auto;
+        grid-template-columns: 1fr;
+    }
+
+    .navbar, .header, .sidebar, .main, .footer{
+        grid-column: 1 / 2;
+    }
+
+    .sidebar, .main {
+        grid-row: auto;
+    }
+}
+
+/* ======== Tablets (Portrait & Landscape) ======== 
+@media (min-width: 601px) and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    .navbar {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .header {
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    .sidebar {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .main {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .footer {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+}
+
+/* ======== PC / Desktop ======== 
+@media (min-width: 1025px) {
+    .grid-container {
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: auto auto 1fr auto;
+    }
+
+    .navbar {
+        grid-column: 1 / 3;
+        grid-row: 1;
+    }
+
+    .header {
+        grid-column: 1 / 3;
+        grid-row: 2;
+    }
+
+    .sidebar {
+        grid-column: 1;
+        grid-row: 3;
+    }
+
+    .main {
+        grid-column: 2;
+        grid-row: 3;
+    }
+
+    .footer {
+        grid-column: 1 / 3;
+        grid-row: 4;
+    }
+}
+    */
+    
+    @media (max-width: 768px) {
+    .grid-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      height: auto;
+    }
+  
+    .navbar,
+    .header,
+    .sidebar,
+    .main,
+    .footer {
+      grid-column: 1 / 2;
+      grid-row: auto;
+    }
+  
+    body {
+      align-items: flex-start;
+      height: auto;
+      padding: 20px 0;
+    }
+  }
+
+
+

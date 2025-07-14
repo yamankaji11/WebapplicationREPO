@@ -1,45 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To do list</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header class="header">
-        <h1>Dash</h1><h1>Board</h1>
-        <div class="container">
-        <div class="input">
-            <input type="text" id="input" placeholder="Search your task">
-            <button id="Search">Search</button>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Example</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="grid-container">
+      <div class="item navbar">navbar</div>
+      <div class="item header">Header</div>
+      <div class="item sidebar">sidebar</div>
+      <div class="item main">main content</div>
+      <div class="item footer">footer</div>
     </div>
-    </header>
-    
-    <!-- nav bar with dashboard , vital task, my task, task categories, setting, help -->
-    <nav class="navbar">
-        <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Vital Task</a></li>
-            <li><a href="#">My Task</a></li>
-            <li><a href="#">Task Categories</a></li>
-            <li><a href="#">Setting</a></li>
-            <li><a href="#">Help</a></li>
-        </ul>
-    </nav>
-
-    <!-- dash board inside here there should be task status div, completed task, pending task -->
-    <div class="dashboard">
-        <div class="task-status">
-            <h2>Task Status</h2>
-            <p>Completed Tasks: <span id="completed-count">0</span></p>
-            <p>Pending Tasks: <span id="pending-count">0</span></p>
-        </div>
-        <div class="task-list">
-            <h2>Tasks</h2>
-            <ul id="task-list"></ul>
-        </div>
-
-</body>
+  </body>
 </html>
