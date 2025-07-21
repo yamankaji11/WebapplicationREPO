@@ -3,16 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Grid Example</title>
+    <title>Grid Example - ToDo App</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="grid-container">
-      <div class="item navbar">navbar</div>
-      <div class="item header">Header</div>
-      <div class="item sidebar">sidebar</div>
-      <div class="item main">main content</div>
-      <div class="item footer">footer</div>
+      <div class="item header">
+        <h1>Header</h1>
+      </div>
+
+      <div class="item navbar">
+        <nav>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="item sidebar">
+        <h2>Sidebar</h2>
+        <ul>
+          <li><a href="#">Link 1</a></li>
+          <li><a href="#">Link 2</a></li>
+          <li><a href="#">Link 3</a></li>
+          <li><a href="#">Link 4</a></li>
+        </ul>
+      </div>
+
+      <div class="item main">
+        <button id="addTaskButton">Add Task</button>
+        <input type="text" id="taskInput" placeholder="Enter task here" />
+        <div id="taskList"></div>
+
+        <h2>Main Content</h2>
+        <p>This is the main content area.</p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+      </div>
+
+      <div class="item footer">
+        <p>Footer</p>
+      </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>

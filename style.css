@@ -1,184 +1,131 @@
-:root {
-    --clr-dark: #0f172a;
-    --clr-light: #f1f5f9;
-    --clr-accent: #e11d48;
-}
-
+/* Reset and base styles */
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    font-family: "Roboto", sans-serif;
-    color: var(--clr-dark);
-    background-color: var(--clr-light);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
 }
 
+/* Grid Layout */
 .grid-container {
-    display: grid;
-    grid-template-rows: auto auto 1fr auto; 
-    grid-template-columns: 1fr 3fr; 
-    gap: 10px;
-    width: 90%;
-    height: 95%;
-    border: 2px solid var(--clr-dark);
-    padding: 20px;
+  display: grid;
+  grid-template-areas:
+    "header navbar"
+    "sidebar main"
+    "footer footer";
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  padding: 10px;
+  min-height: 100vh;
 }
 
 .item {
-    background-color: #fb7185;
-    width: 100%;
-    height: 100%;
-    padding: 1em;
-    font-weight: 700;
-    color: var(--clr-light);
-    text-align: center;
-    border: 2px solid var(--clr-accent);
-    border-radius: 2px;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Navbar */
-.navbar {
-    grid-column: 1 / 3;
-    grid-row: 1;
-}
-
-/* Header */
+/* Grid Areas */
 .header {
-    grid-column: 1 / 3;
-    grid-row: 2;
+  grid-area: header;
+  background-color: #2563eb;
+  color: white;
+  text-align: center;
 }
 
-/* Sidebar */
+.navbar {
+  grid-area: navbar;
+  background-color: #111827;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #3b82f6;
+}
+
 .sidebar {
-    grid-column: 1;
-    grid-row: 3;
+  grid-area: sidebar;
+  background-color: #e5e7eb;
 }
 
-/* Main Content */
+.sidebar ul {
+  list-style-type: none;
+  margin-top: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #111827;
+  display: block;
+  margin: 5px 0;
+}
+
 .main {
-    grid-column: 2;
-    grid-row: 3;
+  grid-area: main;
 }
 
-/* Footer */
 .footer {
-    grid-column: 1 / 3;
-    grid-row: 4;
+  grid-area: footer;
+  text-align: center;
+  background-color: #111827;
+  color: white;
 }
 
-/* ======== Mobile Devices (Phones) ========
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-rows: auto auto auto auto auto;
-        grid-template-columns: 1fr;
-    }
-
-    .navbar, .header, .sidebar, .main, .footer{
-        grid-column: 1 / 2;
-    }
-
-    .sidebar, .main {
-        grid-row: auto;
-    }
+/* To-Do List Styling */
+#taskInput {
+  width: 70%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 2px solid #2563eb;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
-/* ======== Tablets (Portrait & Landscape) ======== 
-@media (min-width: 601px) and (max-width: 1024px) {
-    .grid-container {
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: auto auto 1fr auto;
-    }
-
-    .navbar {
-        grid-column: 1 / 3;
-        grid-row: 1;
-    }
-
-    .header {
-        grid-column: 1 / 3;
-        grid-row: 2;
-    }
-
-    .sidebar {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .main {
-        grid-column: 2;
-        grid-row: 3;
-    }
-
-    .footer {
-        grid-column: 1 / 3;
-        grid-row: 4;
-    }
+#addTaskButton {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
 }
 
-/* ======== PC / Desktop ======== 
-@media (min-width: 1025px) {
-    .grid-container {
-        grid-template-columns: 1fr 3fr;
-        grid-template-rows: auto auto 1fr auto;
-    }
-
-    .navbar {
-        grid-column: 1 / 3;
-        grid-row: 1;
-    }
-
-    .header {
-        grid-column: 1 / 3;
-        grid-row: 2;
-    }
-
-    .sidebar {
-        grid-column: 1;
-        grid-row: 3;
-    }
-
-    .main {
-        grid-column: 2;
-        grid-row: 3;
-    }
-
-    .footer {
-        grid-column: 1 / 3;
-        grid-row: 4;
-    }
+#addTaskButton:hover {
+  background-color: #1d4ed8;
 }
-    */
-    
-    @media (max-width: 768px) {
-    .grid-container {
-      grid-template-columns: 1fr;
-      grid-template-rows: auto;
-      height: auto;
-    }
-  
-    .navbar,
-    .header,
-    .sidebar,
-    .main,
-    .footer {
-      grid-column: 1 / 2;
-      grid-row: auto;
-    }
-  
-    body {
-      align-items: flex-start;
-      height: auto;
-      padding: 20px 0;
-    }
-  }
 
+#taskList {
+  margin-top: 20px;
+}
 
-
+.task-item {
+  background-color: #f3f4f6;
+  border-left: 4px solid #2563eb;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+}
